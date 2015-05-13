@@ -1,0 +1,9 @@
+{
+  "name": "landingbemean",
+  "version": "0.0.0",
+  "description": "Landing page feita para o curso BeMEAN",
+  "dependencies": {
+    "bower": "1.2.8"
+  },
+  "devDependencies": {}
+}

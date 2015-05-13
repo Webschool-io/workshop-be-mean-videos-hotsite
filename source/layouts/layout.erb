@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Curso BeMEAN Vídeos</title>
+  <meta name="description" content="Curso sobre como criar aplicações apenas com Javascript">
+  <meta property="og:title" content="Curso BeMEAN Vídeos">
+  <meta property="og:url" content="http://bemean.com.br/videos">
+  <meta property="og:site_name" content="Curso BeMEAN Vídeos"/>
+  <meta property="og:type" content="website"/>
+
+  <%= stylesheet_link_tag "application" %>
+</head>
+<body class="<%= current_page.data.slug %>">
+
+  <%= partial "shared/header" %>
+  <main class="main">
+    <%= yield %>
+  </main>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+  <%= javascript_include_tag "app" %>
+</body>
+</html>

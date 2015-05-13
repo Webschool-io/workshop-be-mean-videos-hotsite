@@ -1,0 +1,178 @@
+// ================================================================================================
+//
+//	Partials » Header
+//
+// ================================================================================================
+
+$navigation-height: 70px;
+$navigation-bg: $color-hard;
+
+$header-height: 710px;
+$header-background: #232020 url(../images/header-bg.jpg) no-repeat top center;
+$height-padding: 150px;
+
+// ================================================================================================
+//	Ribbon
+// ================================================================================================
+
+.ribbon {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 200px;
+	height: 200px;
+	z-index: 999;
+	color: transparent;
+	&:hover {
+		color: transparent;
+	}
+}
+
+.ribbon-vagas {
+	background: url(../images/ribbon.png) no-repeat 0 0;
+}
+
+.ribbon-desconto {
+	background: url(../images/ribbon-desconto.png) no-repeat 0 0;
+}
+
+// ================================================================================================
+//	Navigation
+// ================================================================================================
+
+.navigation {
+	top: 0;
+	left: 0;
+	@extend %wrap;
+	width: 100%;
+	height: $navigation-height;
+	background: $navigation-bg;
+	z-index: 99;
+
+	&.fixed {
+		@include animation(fixNav 1s);
+		background: black(.5);
+		position: fixed;
+	}
+}
+
+@include keyframes(fixNav) {
+	from {
+		top: -($navigation-height);
+	}
+	to {
+		top: 0;
+	}
+}
+
+.menu {
+	display: table;
+	@include list-nostyle;
+
+	.menu-item {
+		@include inline-block;
+		margin: 0 ($global-margin / 8);
+	}
+
+	.menu-item a:not(.btn) {
+		display: block;
+		height: $navigation-height;
+		line-height: $navigation-height;
+		padding: 0 ($global-margin / 2);
+		text-transform: uppercase;
+  	font-size: 18px;
+		@include transition(all .4s ease-out);
+	}
+
+	.menu-item.active a:not(.btn), .menu-item a:not(.btn):hover {
+		color: $text-color;
+		background: $color-success;
+	}
+
+	.menu-item a.btn {
+		margin-left: $global-margin;
+	}
+}
+
+.logo {
+	display: block;
+	width: 529px;
+	height: 430px;
+	background: url(../images/logo.png) no-repeat 0 0;
+	@include background-size(100%);
+	@include transition(all .4s ease-out);
+	margin: 40px auto ($global-margin * 3) auto;
+}
+
+// ================================================================================================
+//	Header classes
+// ================================================================================================
+
+.header {
+	background: $header-background;
+	background-size: cover;
+	background-attachment: fixed;
+	padding: ($global-margin * 2) 0;
+}
+
+.header-container {
+	@include container;
+	height: 100%;
+}
+
+.course-date {
+	float: left;
+	display: table;
+	color: white;
+	@include text-shadow(0 3px 0 black(.4));
+
+	.info {
+		float: left;
+
+		strong {
+			font-weight: 700;
+		}
+	}
+
+	.info .date {
+		font-size: flex(58px);
+		font-weight: 300;
+		margin-top: -20px;
+		letter-spacing: -0.025em;
+	}
+
+	.info .location {
+		font-size: flex(25px);
+	}
+
+	.calendar {
+		float: left;
+		margin-right: $global-margin * 2;
+
+		img {
+			width: 150px;
+		}
+	}
+}
+
+.call-to-action-center {
+	margin: 0 auto;
+	width: 400px;
+}
+
+.call-to-action {
+	float: right;
+}
+
+.call-to-action, .call-to-action-center {
+	.btn {
+		padding: $global-margin * 2;
+		font-size: flex(30px);
+		@include border-radius(1000px);
+		margin-top: 10px;
+	}
+}
+
+.menu-item a {
+	font-size: 22px;
+}
