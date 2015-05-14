@@ -12,6 +12,8 @@ Voltando ao assunto, irei começar essa mudança pelo visual, porém irei destri
 
 Analisando o [layout](https://cldup.com/ZUJQu1A-bq.thumb.jpg) separei os componentes mais básicos do layout, sem separá-los por suas posições como: topo, rodapé, etc.
 
+![](https://cldup.com/NlKoWKJJTj-3000x3000.jpeg)
+
 Esses componentes são:
 
 - menu
