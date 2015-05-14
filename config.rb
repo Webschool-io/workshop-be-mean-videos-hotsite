@@ -17,14 +17,6 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
-activate :deploy do |deploy|
-	deploy.build_before = true
-  deploy.method   = :ftp
-  deploy.host     = "ftp.cursobemeanfloripa.com.br"
-  deploy.path     = "/public_html"
-  deploy.user     = "mean"
-  deploy.password = "gXhZj32ctfd"
-end
 
 configure :build do
   activate :gzip
