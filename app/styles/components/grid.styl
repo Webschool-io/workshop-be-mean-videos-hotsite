@@ -1,0 +1,79 @@
+// ================================================================================================
+//
+//  Components » Grid
+//
+// ================================================================================================
+
+$total-columns = $global-columns;
+$column-width = 4em;
+$gutter-width = 1em;
+$grid-padding = $gutter-width;
+
+$container-style = static;
+$show-grid-backgrounds = false;
+
+// ================================================================================================
+//	Container
+// ================================================================================================
+
+.container {
+	@include container;
+	@include border-box-sizing;
+  padding-left: 0;
+}
+
+// =============================================================================
+//  Grid Classes
+// =============================================================================
+
+.column-1 {
+  col(1/$total-columns);
+}
+
+.column-2 {
+  col(2/$total-columns);
+}
+
+.column-3 {
+  col(3/$total-columns);
+}
+
+.column-4 {
+  col(4/$total-columns);
+}
+
+.column-5 {
+  col(5/$total-columns);
+}
+
+.column-6 {
+  col(6/$total-columns);
+}
+
+.column-7 {
+  col(7/$total-columns);
+}
+
+.column-8 {
+  col(8/$total-columns);
+}
+
+.column-9 {
+  col(9/$total-columns);
+}
+
+.column-10 {
+  col(1/$total-columns);
+}
+
+.column-11 {
+  col(1/$total-columns);
+}
+
+.column-12 {
+  col(1/$total-columns);
+}
+
+[class*=column].last {
+  @include omega;
+}
