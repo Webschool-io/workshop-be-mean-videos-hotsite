@@ -22,8 +22,8 @@ body {
   font: $font-weight $font-style perc($base-font-size, 16px) / 1 $font-family;
   background: $body-bg;
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.01);
-  @include text-stroke(1px transparent);
-  @include font-smothing;
+  text-stroke(1px, transparent);
+  font-smothing();
 }
 
 body, select {
@@ -94,7 +94,7 @@ svg:not(:root) {
 
 nav > ul,
 nav > ol {
-  @include list-nostyle;
+  list-nostyle();
 }
 
 // ================================================================================================

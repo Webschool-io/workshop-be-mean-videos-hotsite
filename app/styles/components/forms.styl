@@ -59,18 +59,18 @@ form-base($radius = true) {
   font-size: $input-font-size;
   font-weight: $input-font-weight;
   color: $input-color;
-  @include placeholder($input-color);
+  placeholder($input-color);
   line-height: $input-line-height;
   background-color: $input-bg-color;
   border: $input-border-width $input-border-style $input-border-color;
-  @include box-shadow($input-box-shadow);
+  box-shadow($input-box-shadow);
   padding: $form-spacing / 2;
   margin: 0;
 
   &:focus {
     background: $input-focus-bg-color;
     border-color: $input-focus-border-color;
-    @include box-shadow($input-focus-bshadow);
+    box-shadow($input-focus-bshadow);
     outline: none;
   }
   &[disabled] {
@@ -78,13 +78,13 @@ form-base($radius = true) {
   }
   // We can control how much button radius us used.
   if $radius == true {
-    @include border-radius($input-radius);
+    border-radius($input-radius);
   }
   if $radius == false {
-    @include border-radius(0);
+    border-radius(0);
   }
   if $radius == "rounded" {
-    @include border-radius($btn-rounded);
+    border-radius($btn-rounded);
     padding: $form-spacing / 2 $form-spacing;
   }
 }
@@ -101,7 +101,7 @@ form-label($alignment = left) {
   }
 }
 
-fieldset {
+fieldset() {
   border: $fieldset-border-style $fieldset-border-width $fieldset-border-color;
   padding: $fieldset-padding;
   margin: $fieldset-margin;
@@ -127,7 +127,7 @@ form .form-row ~ .form-row {
 }
 
 fieldset {
-  @include fieldset;
+  fieldset();
 }
 
 input[type="text"],
@@ -143,16 +143,16 @@ input[type="search"],
 input[type="tel"],
 input[type="time"],
 input[type="url"] {
-  @include form-base;
+  form-base();
   height: baseSize(13px) + $form-spacing * 1.5;
 }
 
 textarea {
-  @include form-base;
+  form-base();
 }
 
 label {
-  @include form-label;
+  form-label();
   line-height: $form-spacing * 1.9;
 
   &.label-minor {
@@ -161,10 +161,10 @@ label {
     padding-bottom: $form-spacing / 2;
   }
   &.right {
-    @include form-label(right);
+    form-label(right);
   }
   &.center {
-    @include form-label(center);
+    form-label(center);
   }
 }
 
@@ -174,10 +174,10 @@ label {
 
 input, textarea {
   &.noradius {
-    @include form-base($radius: false);
+    form-base($radius: false);
   }
   &.rounded {
-    @include form-base($radius: rounded);
+    form-base($radius: rounded);
   }
 }
 

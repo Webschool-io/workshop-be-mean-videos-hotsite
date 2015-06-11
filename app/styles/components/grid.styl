@@ -17,8 +17,8 @@ $show-grid-backgrounds = false;
 // ================================================================================================
 
 .container {
-	@include container;
-	@include border-box-sizing;
+	container($global-columns/$global-columns, gutter: $global-margin);
+	border-box-sizing();
   padding-left: 0;
 }
 
@@ -75,5 +75,5 @@ $show-grid-backgrounds = false;
 }
 
 [class*=column].last {
-  @include omega;
+  omega();
 }

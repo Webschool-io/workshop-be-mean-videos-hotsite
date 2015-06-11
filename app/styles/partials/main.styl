@@ -51,7 +51,7 @@
 
 .instructor {
 	background: darken($body-bg, 12%);
-	@include box-shadow(0 5px 10px black(.05) inset);
+	box-shadow: 0 5px 10px black(.05) inset;
 
 	img {
 		width: 289px;
@@ -83,17 +83,17 @@
 	width: 328px;
 	height: 408px;
 	background: white;
-	@include box-shadow(0 2px 0 black(.2));
-	@include border-radius($global-radius);
+	box-shadow: 0 2px 0 black(.2);
+	border-radius($global-radius);
 	margin-right: $global-margin;
 	padding: $global-margin;
 
 	h3 {
 		position: relative;
 		color: white;
-		@include text-shadow(0 2px 0 black(.3));
+		text-shadow: 0 2px 0 black(.3);
 		background: $color-medium-soft;
-		@include border-radius($global-radius $global-radius 0 0);
+		border-radius($global-radius, $global-radius, 0, 0);
 		margin: -($global-margin);
 		margin-bottom: $global-margin;
 		padding: ($global-margin * 1.2) $global-margin;
@@ -113,7 +113,7 @@
 	}
 
 	ul {
-		@include list-nostyle;
+		list-nostyle();
 
 		li {
 			line-height: 1.8;
@@ -121,7 +121,7 @@
 		}
 
 		li:before {
-			@include pseudo-element;
+			pseudo-element();
 			display: inline-block;
 			color: $color-success;
 			font-family: 'FontAwesome';

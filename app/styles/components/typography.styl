@@ -58,7 +58,7 @@ $definition-list-margin-bottom = $global-margin;
 //  Mixins
 // ================================================================================================
 
-@mixin typ-heading-base {
+typ-heading-base() {
   color = $heading-color;
   letter-spacing = $heading-letter-spacing;
   font-weight: $heading-font-weight;
@@ -68,17 +68,17 @@ $definition-list-margin-bottom = $global-margin;
   margin-bottom: $heading-bottom-margin;
 }
 
-@mixin typ-hr-base {
-  @include container;
+typ-hr-base() {
+  container();
   height: 2px;
   border-style: $hr-border-style;
   border-color: $hr-border-color;
   border-width: $hr-border-width 0 0 0;
-  @include box-shadow(0 2px 0 white(.8));
+  box-shadow(0 2px 0 white(.8));
   margin: 60px 0 60px 0;
 }
 
-@mixin typ-blockquote-base {
+typ-blockquote-base() {
   font-style: normal;
   border-left: $blockquote-border;
   margin: 0 0 $paragraph-margin-bottom;
@@ -110,7 +110,7 @@ $definition-list-margin-bottom = $global-margin;
 // ================================================================================================
 
 h1, h2, h3, h4, h5, h6 {
-  @include typ-heading-base;
+  typ-heading-base();
 }
 
 h1 {
@@ -144,7 +144,7 @@ h6 {
 }
 
 hr {
-  @include typ-hr-base;
+  typ-hr-base();
 }
 
 // ================================================================================================
@@ -161,7 +161,7 @@ p {
 // ================================================================================================
 
 blockquote {
-  @include typ-blockquote-base;
+  typ-blockquote-base();
 }
 
 blockquote,

@@ -125,8 +125,8 @@ button-size($padding = $btn-med, $full-width = false, $is-input = false) {
 }
 
 button-style($bg = $btn-bg-soft, $radius = true, $disabled = false) {
-  if $bg {
-    $bg-lightness: lightness($bg);
+  if $bg is a 'unit' {
+    $bg-lightness = lightness($bg);
     background: $bg;
     border-color: darken($bg, $btn-function-factor);
     box-shadow: 0 2px 0 darken($bg, $btn-function-factor * 2);
@@ -144,7 +144,7 @@ button-style($bg = $btn-bg-soft, $radius = true, $disabled = false) {
 
     if $bg-lightness > 75% {
       color: $btn-font-color-alt;
-      @include text-shadow($btn-tshadow-white);
+      text-shadow($btn-tshadow-white);
 
       &:hover, &:focus {
         color: $btn-font-color-alt;
@@ -153,7 +153,7 @@ button-style($bg = $btn-bg-soft, $radius = true, $disabled = false) {
 
     else {
       color: $btn-font-color;
-      @include text-shadow($btn-tshadow-black);
+      text-shadow($btn-tshadow-black);
       &:hover, &:focus {
         color: $btn-font-color;
       }
@@ -172,22 +172,22 @@ button-style($bg = $btn-bg-soft, $radius = true, $disabled = false) {
   }
 
   if $radius == true {
-    @include border-radius($btn-radius);
+    border-radius($btn-radius);
   }
 
   if $radius == false {
-    @include border-radius(0);
+    border-radius(0);
   }
 
   else if $radius {
-    @include border-radius($radius);
+    border-radius($radius);
   }
 }
 
 button($padding = $btn-med, $bg = $btn-bg-font, $radius = false, $full-width = false, $disabled = false, $is-input = false, $is-prefix = false) {
-  @include button-base;
-  @include button-size($padding $full-width $is-input);
-  @include button-style($bg $radius $disabled);
+  button-base();
+  button-size($padding $full-width $is-input);
+  button-style($bg $radius $disabled);
 }
 
 // ================================================================================================
@@ -201,36 +201,36 @@ input[type=reset],
 input[type=button] {
 
   &.btn {
-    @include button-base;
-    @include button-size;
-    @include button-style;
+    button-base();
+    button-size();
+    button-style();
 
 // ================================================================================================
 //  Colors
 // ================================================================================================
 
     &.btn-primary {
-      @include button-style($bg = $btn-bg-primary);
+      button-style($bg = $btn-bg-primary);
     }
 
     &.btn-secondary {
-      @include button-style($bg = $btn-bg-secondary);
+      button-style($bg = $btn-bg-secondary);
     }
 
     &.btn-waiting {
-      @include button-style($bg = $btn-bg-waiting);
+      button-style($bg = $btn-bg-waiting);
     }
 
     &.btn-success {
-      @include button-style($bg = $btn-bg-success);
+      button-style($bg = $btn-bg-success);
     }
 
     &.btn-error {
-      @include button-style($bg = $btn-bg-error);
+      button-style($bg = $btn-bg-error);
     }
 
     &.btn-hard {
-      @include button-style($bg = $btn-bg-hard);
+      button-style($bg = $btn-bg-hard);
     }
 
 // ================================================================================================
@@ -238,19 +238,19 @@ input[type=button] {
 // ================================================================================================
 
     &.btn-large {
-      @include button-size($padding = $btn-lrg);
+      button-size($padding = $btn-lrg);
     }
 
     &.btn-small {
-      @include button-size($padding = $btn-sml);
+      button-size($padding = $btn-sml);
     }
 
     &.btn-tiny {
-      @include button-size($padding = $btn-tny);
+      button-size($padding = $btn-tny);
     }
 
     &.btn-block {
-      @include button-size($padding = 0 $full_width = true);
+      button-size($padding = 0 $full_width = true);
     }
 
 // ================================================================================================
@@ -258,30 +258,30 @@ input[type=button] {
 // ================================================================================================
 
     &.disabled, &[disabled] {
-      @include button-style($bg = $btn-bg-soft $disabled = true);
+      button-style($bg = $btn-bg-soft $disabled = true);
 
       &.btn-primary {
-        @include button-style($bg = $btn-bg-primary $disabled = true);
+        button-style($bg = $btn-bg-primary $disabled = true);
       }
 
       &.btn-secondary {
-        @include button-style($bg = $btn-bg-secondary $disabled = true);
+        button-style($bg = $btn-bg-secondary $disabled = true);
       }
 
       &.btn-waiting {
-        @include button-style($bg = $btn-bg-waiting $disabled = true);
+        button-style($bg = $btn-bg-waiting $disabled = true);
       }
 
       &.btn-success {
-        @include button-style($bg = $btn-bg-success $disabled = true);
+        button-style($bg = $btn-bg-success $disabled = true);
       }
 
       &.btn-error {
-        @include button-style($bg = $btn-bg-error $disabled = true);
+        button-style($bg = $btn-bg-error $disabled = true);
       }
 
       &.btn-hard {
-        @include button-style($bg = $btn-bg-hard $disabled = true);
+        button-style($bg = $btn-bg-hard $disabled = true);
       }
     }
 
@@ -290,11 +290,11 @@ input[type=button] {
 // ================================================================================================
 
     &.btn-noradius {
-      @include button-style($bg = false $radius = false);
+      button-style($bg = false $radius = false);
     }
 
     &.btn-rounded {
-      @include button-style($bg = false $radius = $btn-rounded);
+      button-style($bg = false $radius = $btn-rounded);
     }
   }
 }

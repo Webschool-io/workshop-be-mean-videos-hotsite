@@ -50,13 +50,13 @@ $height-padding = 150px;
   z-index: 99;
 
   &.fixed {
-    @include animation(fixNav 1s);
+    animation(fixNav 1s);
     background: black(.5);
     position: fixed;
   }
 }
 
-@include keyframes(fixNav) {
+keyframes(fixNav) {
   from {
     top: -($navigation-height);
   }
@@ -67,10 +67,10 @@ $height-padding = 150px;
 
 .menu {
   display: table;
-  @include list-nostyle;
+  list-nostyle();
 
   .menu-item {
-    @include inline-block;
+    inline-block();
     margin: 0 ($global-margin / 8);
   }
 
@@ -81,7 +81,7 @@ $height-padding = 150px;
     padding: 0 ($global-margin / 2);
     text-transform: uppercase;
     font-size: 18px;
-    @include transition(all .4s ease-out);
+    transition(all .4s ease-out);
   }
 
   .menu-item.active a:not(.btn), .menu-item a:not(.btn):hover {
@@ -99,8 +99,8 @@ $height-padding = 150px;
   width: 529px;
   height: 430px;
   background: url(../images/logo.png) no-repeat 0 0;
-  @include background-size(100%);
-  @include transition(all .4s ease-out);
+  background-size(100%);
+  transition(all .4s ease-out);
   margin: 40px auto ($global-margin * 3) auto;
 }
 
@@ -116,7 +116,7 @@ $height-padding = 150px;
 }
 
 .header-container {
-  @include container;
+  container();
   height: 100%;
 }
 
@@ -124,7 +124,7 @@ $height-padding = 150px;
   float: left;
   display: table;
   color: white;
-  @include text-shadow(0 3px 0 black(.4));
+  text-shadow: 0 3px 0 black(.4);
 
   .info {
     float: left;
@@ -168,7 +168,7 @@ $height-padding = 150px;
   .btn {
     padding: $global-margin * 2;
     font-size: flex(30px);
-    @include border-radius(1000px);
+    border-radius(1000px);
     margin-top: 10px;
   }
 }
