@@ -1,0 +1,8 @@
+{
+  "name": "workshop-be-mean-videos-hotsite",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "stellar.js": "~0.6.2"
+  }
+}

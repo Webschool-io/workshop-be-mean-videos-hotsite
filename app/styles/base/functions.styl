@@ -1,0 +1,74 @@
+// ================================================================================================
+//
+//  Functions Module
+//
+//  All general purpose functions are defined here.
+//
+// ================================================================================================
+
+// ================================================================================================
+//	Functions to get black/white color with opacity
+// ================================================================================================
+
+black($opacity) {
+  return rgba(0, 0, 0, $opacity);
+}
+
+/*white($opacity) {
+  return rgba(255, 255, 255, $opacity);
+}*/
+
+// ================================================================================================
+//	Functions thats auto-convert units
+// ================================================================================================
+
+removeUnir($number) {
+  $unit = unit($number);
+  $one = 1;
+  if $unit == "px" {
+    $one = 1px;
+  }
+  if $unit == "em" {
+    $one = 1em;
+  }
+  if $unit == "%" {
+    $one = 1%;
+  }
+  return $number / $one;
+}
+
+flex($target, $context = $base-font-size, $unit = "em") {
+  $size = (removeUnir($target) / removeUnir($context));
+  if $unit == "" {
+    return $size;
+  }
+  if $unit == "em" {
+    return unit($size, 'em');
+  }
+  if $unit == "%" {
+    return percentage($size, $context);
+  }
+}
+
+percentage($numerator, $denominator)
+  ( $numerator / $denominator  * 100 ) %
+
+perc($target, $context) {
+  return flex($target, $context, "%");
+}
+
+em($target, $context) {
+  return flex($target, $context, "em");
+}
+
+baseSize($pxWidth) {
+  return $pxWidth / $base-font-size * 1em;
+}
+
+// ================================================================================================
+//	Function for get the centered position between two elements
+// ================================================================================================
+
+centered-position($context, $element) {
+	return ($context - $element) / 2;
+}

@@ -1,0 +1,293 @@
+// ================================================================================================
+//
+//	Partials » Main
+//
+// ================================================================================================
+
+.main {
+	h2 {
+		font-size: flex(44px);
+		line-height: 1.2;
+		color: darken($color-success, 10%);
+	}
+}
+
+.introduction,
+.instructor,
+.agenda,
+.subscriptions,
+.realization,
+.desconto,
+.faq {
+	@extend $wrap;
+	padding: ($global-margin * 4) 0;
+
+	p {
+		margin-bottom: 0;
+	}
+
+	h2 {
+		margin-top: 0;
+	}
+}
+
+// ================================================================================================
+//	Introduction
+// ================================================================================================
+
+.introduction {
+	img {
+		width: 250px;
+		float: right;
+		margin-left: 60px;
+		margin-top: 0;
+		margin-bottom: 40px;
+	}
+}
+
+// ================================================================================================
+//	Author
+// ================================================================================================
+
+.instructor {
+	background: darken($body-bg, 12%);
+	box-shadow: 0 5px 10px black(.05) inset;
+
+	img {
+		width: 289px;
+		float: left;
+		margin-right: 50px;
+		margin-top: 0;
+	}
+}
+
+// ================================================================================================
+//	Agenda
+// ================================================================================================
+
+.agenda {
+	img {
+		float: right;
+		width: 250px;
+		margin-left: 80px;
+		margin-top: 30px;
+	}
+
+	p {
+		margin-bottom: $global-margin * 4;
+	}
+}
+
+.agenda-item {
+	float: left;
+	col(1/3)
+	height: 408px;
+	background: white;
+	box-shadow: 0 2px 0 black(.2);
+	border-radius($global-radius);
+	margin-right: $global-margin;
+	padding: $global-margin;
+
+	h3 {
+		position: relative;
+		color: white;
+		text-shadow: 0 2px 0 black(.3);
+		background: $color-medium-soft;
+		border-radius($global-radius, $global-radius, 0, 0);
+		margin: -($global-margin);
+		margin-bottom: $global-margin;
+		padding: ($global-margin * 1.2) $global-margin;
+
+		img {
+			position: absolute;
+			width: auto;
+			height: 55px;
+			top: 12px;
+			right: 10px;
+			margin: 0;
+		}
+
+		.nodejs {
+			margin-top: 5px;
+		}
+	}
+
+	ul {
+		list-nostyle();
+
+		li {
+			line-height: 1.8;
+			padding-left: $global-margin + 10px;
+		}
+
+		li:before {
+			pseudo-element();
+			display: inline-block;
+			color: $color-success;
+			font-family: 'FontAwesome';
+			content: '\f00c';
+			margin-left: -($global-margin + 10px);
+		}
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+// ================================================================================================
+//	Subscriptions
+// ================================================================================================
+
+.subscriptions {
+	background: #fff;
+	margin-top: $global-margin * 2;
+
+	h2 {
+		margin-top: 0;
+		margin-bottom: $global-margin;
+	}
+
+	p {
+		color: white;
+		margin-bottom: $global-margin * 2;
+	}
+
+	iframe {
+		background: white;
+	}
+}
+
+// ================================================================================================
+//	Realization
+// ================================================================================================
+
+.realization {
+	background: $color-soft;
+	padding: ($global-margin * 2) 0;
+	margin-top: 5px;
+	text-align: center;
+
+	h2 {
+		color: $color-medium-soft;
+	}
+
+	img {
+		margin-right: $global-margin;
+	}
+}
+
+// ================================================================================================
+//	Site Info
+// ================================================================================================
+
+.site-info {
+	font-size: flex(14px);
+	color: $color-medium-soft;
+	text-align: center;
+	padding: $global-margin 0;
+}
+
+.icon {
+	display: inline-block;
+	float: left;
+	margin: 20px;
+	margin-top: -14px;
+
+}
+
+// .icon-request {
+// 	display: inline-block;
+// 	float: left;
+// 	margin: 20px;
+// 	margin-top: -14px;
+
+// }
+
+// .icon-money {
+// 	display: inline-block;
+// 	float: left;
+// 	margin: 20px;
+// 	margin-top: -14px;
+
+// }
+
+.requests-list {
+	display: block;
+	width: 40%;
+	margin-left: 160px;
+	margin-bottom: 80px;
+}
+
+.desconto {
+	background-color: #f1c40f;
+	.title {
+		color: #000;
+	}
+	img {
+		float: right;
+		margin-left: 80px;
+		margin-top: 30px;
+	}
+}
+
+// ================================================================================================
+//	FAQ
+// ================================================================================================
+
+.faq {
+	// background: $color-soft;
+	padding: ($global-margin * 2) 0;
+	margin-top: 5px;
+	// text-align: left;
+	p, dl {
+	  font-size:1.2em;
+	  line-height:170%;
+	  margin-bottom:20px;
+	}
+	dl, dt, dd {
+	  padding:0;
+	  margin:0;
+	}
+	.faqs { padding-top: 20px; }
+	.faqs dt {
+	  font-size:1.8em;
+	  // font-family: 'Michroma', Arial, Helvetica, sans-serif;
+	  // background: url(http://justtoletyouknow.co.uk/images/icon-question.png); background-repeat: no-repeat;
+	  padding:3px 0 15px 30px;
+	  position: relative;
+	}
+	.faqs dt:hover {
+	  cursor:pointer;;
+	  color:#333;
+	  text-decoration:none;
+	}
+	.faqs dd {
+	  color:#666;
+	  text-indent:25px;
+	  // font-family: 'Tenor Sans', Arial, Helvetica, sans-serif;
+	  font-size:1.1em;
+	  // background: url(http://profi-s.com/wp-content/uploads/icons/question.png);
+	  background-repeat: no-repeat;
+	  padding:0 0 5px 30px;
+	  position:relative;
+	  margin-bottom: 40px;
+	}
+
+
+	.title {
+		text-align: left;
+	}
+
+	img {
+		margin-right: $global-margin;
+	}
+}
+
+
+
+
+.video {
+	width: 560px;
+	margin: 0 auto;
+}
