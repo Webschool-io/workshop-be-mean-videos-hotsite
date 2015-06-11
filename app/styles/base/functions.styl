@@ -46,9 +46,12 @@ flex($target, $context = $base-font-size, $unit = "em") {
     return unit($size, 'em');
   }
   if $unit == "%" {
-    return percentage($size);
+    return percentage($size, $context);
   }
 }
+
+percentage($numerator, $denominator)
+  ( $numerator / $denominator  * 100 ) %
 
 perc($target, $context) {
   return flex($target, $context, "%");

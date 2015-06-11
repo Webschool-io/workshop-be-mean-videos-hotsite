@@ -9,17 +9,14 @@ $column-width = 4em;
 $gutter-width = 1em;
 $grid-padding = $gutter-width;
 
-$container-style = static;
-$show-grid-backgrounds = false;
-
 // ================================================================================================
 //	Container
 // ================================================================================================
 
 .container {
-	container($global-columns/$global-columns, gutter: $global-margin);
+	center((($column-width + $gutter-width) * $total-columns), pad = $global-margin);
 	border-box-sizing();
-  padding-left: 0;
+  cf();
 }
 
 // =============================================================================
