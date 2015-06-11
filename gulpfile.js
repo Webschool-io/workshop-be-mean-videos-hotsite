@@ -95,7 +95,7 @@ gulp.task('serve', ['views', 'styles'], function () {
   ]).on('change', reload);
 
   gulp.watch('app/**/*.html', ['views', reload]);
-  gulp.watch('app/styles/**/*.scss', ['styles']);
+  gulp.watch('app/styles/**/*.styl', ['styles']);
   gulp.watch('bower.json', ['wiredep']);
 });
 
@@ -103,7 +103,7 @@ gulp.task('serve', ['views', 'styles'], function () {
 gulp.task('wiredep', function () {
   var wiredep = require('wiredep').stream;
 
-  gulp.src('app/styles/*.scss')
+  gulp.src('app/styles/*.styl')
     .pipe(wiredep({
       ignorePath: /^(\.\.\/)+/
     }))
