@@ -4,56 +4,56 @@
 //
 // =============================================================================
 
-$form-spacing: baseSize($global-margin);
+$form-spacing = baseSize($global-margin);
 
 // input properties
-$input-font-size: baseSize($base-font-size - 2px);
-$input-font-weight: 300;
-$input-bg-color: white;
-$input-line-height: 1.5;
+$input-font-size = baseSize($base-font-size - 2px);
+$input-font-weight = 300;
+$input-bg-color = white;
+$input-line-height = 1.5;
 
-$input-border-color: lighten($color-soft, 3%);
-$input-border-style: solid;
-$input-border-width: 1px;
-$input-box-shadow: inset 0 1px 4px black(0.07);
+$input-border-color = lighten($color-soft, 3%);
+$input-border-style = solid;
+$input-border-width = 1px;
+$input-box-shadow = inset 0 1px 4px black(0.07);
 
-$input-radius: $global-radius;
-$input-rounded: $global-rounded;
+$input-radius = $global-radius;
+$input-rounded = $global-rounded;
 
 // input disabled
-$input-disabled-bg: #eeeeee;
+$input-disabled-bg = #eeeeee;
 
 // input focus
-$input-focus-bg-color: white;
-$input-focus-border-color: $color-medium-soft;
-$input-focus-bshadow: 0 0 0 rgba($color-primary, 0), $input-box-shadow;
+$input-focus-bg-color = white;
+$input-focus-border-color = $color-medium-soft;
+$input-focus-bshadow = 0 0 0 rgba($color-primary, 0), $input-box-shadow;
 
 // fieldset style
-$fieldset-border-style: solid;
-$fieldset-border-width: 1px;
-$fieldset-border-color: #dddddd;
-$fieldset-padding: baseSize($global-margin);
-$fieldset-margin: baseSize($global-margin) 0;
+$fieldset-border-style = solid;
+$fieldset-border-width = 1px;
+$fieldset-border-color = #dddddd;
+$fieldset-padding = baseSize($global-margin);
+$fieldset-margin = baseSize($global-margin) 0;
 
 // legends style
-$legend-bg: white;
-$legend-font-weight: bold;
-$legend-padding: 0 baseSize(3px);
+$legend-bg = white;
+$legend-font-weight = bold;
+$legend-padding = 0 baseSize(3px);
 
 // prefix e postfix
-$input-fix-bg: darken(white, 5%);
-$input-fix-border-color: darken(white, 20%);
-$input-fix-border-size: 1px;
-$input-fix-border-type: solid;
-$input-fix-overflow: hidden;
-$input-fix-font-color: #333333;
-$input-fix-font-color-alt: white;
+$input-fix-bg = darken(white, 5%);
+$input-fix-border-color = darken(white, 20%);
+$input-fix-border-size = 1px;
+$input-fix-border-type = solid;
+$input-fix-overflow = hidden;
+$input-fix-font-color = #333333;
+$input-fix-font-color-alt = white;
 
 // =============================================================================
 //  Mixins
 // =============================================================================
 
-@mixin form-base($radius: true) {
+form-base($radius = true) {
   width: 100%;
   font-family: $font-family;
   font-size: $input-font-size;
@@ -77,31 +77,31 @@ $input-fix-font-color-alt: white;
     background-color: $input-disabled-bg;
   }
   // We can control how much button radius us used.
-  @if $radius == true {
+  if $radius == true {
     @include border-radius($input-radius);
   }
-  @if $radius == false {
+  if $radius == false {
     @include border-radius(0);
   }
-  @if $radius == "rounded" {
+  if $radius == "rounded" {
     @include border-radius($btn-rounded);
     padding: $form-spacing / 2 $form-spacing;
   }
 }
 
-@mixin form-label($alignment: left) {
-  @if $alignment == left {
+form-label($alignment = left) {
+  if $alignment == left {
     text-align: left;
   }
-  @if $alignment == right {
+  if $alignment == right {
     text-align: right;
   }
-  @if $alignment == center {
+  if $alignment == center {
     text-align: center;
   }
 }
 
-@mixin fieldset {
+fieldset {
   border: $fieldset-border-style $fieldset-border-width $fieldset-border-color;
   padding: $fieldset-padding;
   margin: $fieldset-margin;
@@ -119,7 +119,7 @@ $input-fix-font-color-alt: white;
 // =============================================================================
 
 form .form-row {
-  @extend %wrap;
+  @extend $wrap;
 }
 
 form .form-row ~ .form-row {
